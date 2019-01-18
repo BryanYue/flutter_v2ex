@@ -20,6 +20,19 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
+  #文件处理
+  path_provider: ^0.4.1
+
+  # Wraps NSUserDefaults (on iOS) and SharedPreferences (on Android)
+  #
+  shared_preferences: ^0.4.3
+
+
+  #
+  json_annotation: ^2.0.0
+  #
+  html: any
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
