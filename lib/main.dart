@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'V2EX',
 
       //应用首页路由
-      home: HomePage(),
+      home: new HomePage(),
     );
   }
 }

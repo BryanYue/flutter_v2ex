@@ -18,6 +18,6 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return null;
+    return new Text("hello world");
   }
 }
