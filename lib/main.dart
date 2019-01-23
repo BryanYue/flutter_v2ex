@@ -21,9 +21,8 @@ class MyApp extends StatelessWidget {
       //used by the OS task switcher
       //应用任务切换时  显示的标题
       title: 'V2EX',
-
       //应用首页路由
-      home: new HomePage(),
+      home:  HomePage(),
     );
   }
 }

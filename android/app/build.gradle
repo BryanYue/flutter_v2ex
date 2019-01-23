@@ -46,11 +46,42 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-    buildTypes {
+
+
+
+    signingConfigs {
+
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
+            storeFile file('v2ex.jks')
+            storePassword "123456"
+            keyAlias "v2ex"
+            keyPassword "123456"
+        }
+    }
+
+
+
+
+
+    buildTypes {
+//        debug {
+//            buildConfigField("boolean", "LOG_DEBUG", "true")
+//            debuggable true
+//            useProguard true
+//            minifyEnabled true
+//            zipAlignEnabled true
+//            signingConfig signingConfigs.debug
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+        release {
+//            buildConfigField("boolean", "LOG_DEBUG", "true")
+//            debuggable true
+//            useProguard true
+//            minifyEnabled true
+//            zipAlignEnabled true
+//            shrinkResources true
+            signingConfig signingConfigs.release
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
