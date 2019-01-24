@@ -5,7 +5,7 @@ import 'view/HomePage.dart';
 
 //应用入口
 void main() async {
-  device().get();
+
   runApp(new MyApp());
 }
 

@@ -50,12 +50,14 @@ android {
 
 
     signingConfigs {
-
+        Properties properties = new Properties()
+        properties.load(new FileInputStream(file('v2ex_ketstore_pwd.properties')))
         release {
-            storeFile file('v2ex.jks')
-            storePassword "123456"
-            keyAlias "v2ex"
-            keyPassword "123456"
+            storeFile file("v2ex.jks")
+            storePassword properties['storePassword']
+            keyAlias properties['keyAlias']
+            keyPassword properties['keyPassword']
+            v2SigningEnabled false
         }
     }
 
@@ -64,24 +66,25 @@ android {
 
 
     buildTypes {
-//        debug {
-//            buildConfigField("boolean", "LOG_DEBUG", "true")
-//            debuggable true
-//            useProguard true
-//            minifyEnabled true
-//            zipAlignEnabled true
-//            signingConfig signingConfigs.debug
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//        }
+        debug {
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            debuggable true
+            useProguard true
+            minifyEnabled true
+            zipAlignEnabled true
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
         release {
-//            buildConfigField("boolean", "LOG_DEBUG", "true")
-//            debuggable true
-//            useProguard true
-//            minifyEnabled true
-//            zipAlignEnabled true
-//            shrinkResources true
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            debuggable false
+            useProguard true
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
             signingConfig signingConfigs.release
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }

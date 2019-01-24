@@ -24,7 +24,7 @@ dependencies:
   #文件处理
   path_provider: ^0.4.1
   #设备信息
-  device_info: ^0.3.0
+  #device_info: ^0.3.0
 
   # Wraps NSUserDefaults (on iOS) and SharedPreferences (on Android)
   #
