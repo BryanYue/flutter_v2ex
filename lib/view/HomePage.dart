@@ -44,7 +44,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     print('build');
     // TODO: implement build
-    return Scaffold(
+    return  Scaffold(
       appBar: AppBar(),
       body: Center(
         child: Text(barItem[_selectedIndex]['title']),
@@ -57,6 +57,7 @@ class HomePageState extends State<HomePage> {
         fixedColor: Colors.blue,
         onTap: _onItemTapped,
       ),
+      primary: true,
     );
   }
 

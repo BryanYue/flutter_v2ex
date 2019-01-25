@@ -59,6 +59,7 @@ android {
             keyPassword properties['keyPassword']
             v2SigningEnabled false
         }
+
     }
 
 
@@ -70,9 +71,9 @@ android {
             buildConfigField("boolean", "LOG_DEBUG", "true")
             debuggable true
             useProguard true
-            minifyEnabled true
+            minifyEnabled false
             zipAlignEnabled true
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 

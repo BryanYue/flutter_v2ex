@@ -5,7 +5,6 @@ import 'view/HomePage.dart';
 
 //应用入口
 void main() async {
-
   runApp(new MyApp());
 }
 
@@ -17,7 +16,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return  new MaterialApp(
+    return  MaterialApp(
       //used by the OS task switcher
       //应用任务切换时  显示的标题
       title: 'V2EX',
@@ -25,6 +24,9 @@ class MyApp extends StatelessWidget {
       home:  HomePage(),
     );
   }
+
+
+
 }
 
 
