@@ -6,7 +6,7 @@
 */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_v2ex/res/color.dart';
+import 'package:flutter_v2ex/res/theme.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -27,7 +27,6 @@ class HomePageState extends State<HomePage> {
   //选中条目 index
   int _selectedIndex = 0;
 
-
   @override
   void initState() {
     // TODO: implement initState
@@ -44,20 +43,23 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     print('build');
     // TODO: implement build
-    return  Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Text(barItem[_selectedIndex]['title']),
+    return  MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(),
+        body: Center(
+          child: Text(barItem[_selectedIndex]['title']),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: myBars,
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _selectedIndex,
+          iconSize: 24,
+          fixedColor: Colors.blue,
+          onTap: _onItemTapped,
+        ),
+        primary: true,
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: myBars,
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _selectedIndex,
-        iconSize: 24,
-        fixedColor: Colors.blue,
-        onTap: _onItemTapped,
-      ),
-      primary: true,
+      theme: theme.themeData,
     );
   }
 
@@ -71,7 +73,12 @@ class HomePageState extends State<HomePage> {
   void setState(fn) {
     // TODO: implement setState
     super.setState(fn);
-    print('setState');
+    print('setState:' + _selectedIndex.toString());
+
+    //
+    if (_selectedIndex == 2) {
+      theme.setThemeDark(!theme.dark);
+    }
   }
 
   @override

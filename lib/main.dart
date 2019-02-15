@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'device/device.dart';
 import 'view/HomePage.dart';
+import 'res/theme.dart';
 
 //应用入口
 void main() async {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       title: 'V2EX',
       //应用首页路由
       home:  HomePage(),
+
     );
   }
 
