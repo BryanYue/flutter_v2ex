@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class theme {
-  static bool dark = true;
-  static ThemeData themeData = new ThemeData.dark();
+  static bool dark = false;
+  static ThemeData themeData = new ThemeData.light();
 
   /*
   * 
-  *   根据传入布尔值 设置当前主题的 基本主題色調
+  *   根据传入布尔值 设置主题的 基本主題色調
   * */
   static void setThemeDark(bool b) {
     if (b == dark) return;
@@ -20,14 +20,7 @@ class theme {
     dark = b;
   }
 
-  /*
-* 
-* */
-  static void setTheme(ThemeData them) {
-    themeData = them;
 
-    dark = false;
-  }
 
   /*
   * 
