@@ -6,7 +6,11 @@
 */
 
 import 'package:flutter/material.dart';
+import 'package:flutter_v2ex/api/NetworkManager.dart';
+import 'package:flutter_v2ex/model/TopicsBean.dart';
 import 'package:flutter_v2ex/res/theme.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter_v2ex/api/ApiService.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -69,17 +73,36 @@ class HomePageState extends State<HomePage> {
     });
   }
 
-  @override
+
+@override
   void setState(fn) {
     // TODO: implement setState
     super.setState(fn);
+
+
     print('setState:' + _selectedIndex.toString());
 
     //
     if (_selectedIndex == 2) {
       theme.setThemeDark(!theme.dark);
+
+      Dio dio = new Dio();
+
+      dio.get(ApiService.HOT_TOPICS).then((r){
+        List<TopicsHotBean> list =TopicsHotBean.fromMapList(r.data);
+
+        print(list[0].title);
+        print(list[0].url);
+
+
+
+      });
     }
+
+
   }
+
+
 
   @override
   void dispose() {

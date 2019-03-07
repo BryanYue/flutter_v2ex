@@ -1,6 +1,6 @@
 //导入包
 import 'package:flutter/material.dart';
-import 'device/device.dart';
+import 'device/Device.dart';
 import 'view/HomePage.dart';
 import 'res/theme.dart';
 
